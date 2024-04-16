@@ -1,17 +1,54 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+
 
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext)
+    const [error, setError] = useState('')
 
     const handleRegister = e => {
         e.preventDefault();
         const email = e.target.email.value
         const password = e.target.password.value;
         console.log(email, password)
+
+        setError('')
+        
+
+
+        if (password.length < 6) {
+            setError('Password must have 6 Character!!!')
+            return
+        }
+        if(!/[A-Z]/.test(password)){
+            setError('Password must have an Uppercase ')
+            return
+        }
+        if(!/[a-z]/.test(password)){
+            setError('Password must have an Lowercase ')
+            return
+        }
+
+        // i want to check whether password has any uppercase in js using regex
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                alert('Logged in Successfully!')
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+
     }
+
 
     return (
         <div className="max-w-lg mx-auto my-36">
+            
 
             <p className="text-center font-medium text-2xl pb-12">Create Your Account</p>
             <form onSubmit={handleRegister} className="card-body border bg-gray-100 rounded-lg">
@@ -54,11 +91,14 @@ const Register = () => {
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
                 </div>
+                <p className="text-red-600 text-center">{error}</p>
                 <div className="form-control mt-6">
                     <button className="btn bg-orange-500 text-white">Login</button>
                 </div>
             </form>
             <p className="bg-blue-100 rounded-lg text-center border p-4 my-4">Already Have an Account? Please <Link className="text-orange-500 font-semibold" to={'/login'}>Login</Link></p>
+           
+
         </div>
 
     );

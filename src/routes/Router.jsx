@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 
+
   const Router = createBrowserRouter([
     {
       path: "/",
@@ -13,7 +14,7 @@ import Register from "../pages/Register/Register";
       children: [
         {
           path: '/',
-          element: <Home></Home>
+          element: <Home></Home>,
         },
         {
           path: '/login',
