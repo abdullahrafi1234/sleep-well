@@ -87,11 +87,10 @@ const Register = () => {
                         name="password"
                         placeholder="Password"
                         className="input input-bordered" required />
-                    <label className="label">
-                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                    </label>
+                    
                 </div>
                 <p className="text-red-600 text-center">{error}</p>
+
                 <div className="form-control mt-6">
                     <button className="btn bg-orange-500 text-white">Login</button>
                 </div>

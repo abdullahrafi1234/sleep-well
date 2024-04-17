@@ -1,13 +1,61 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Login = () => {
+
+    const { signInUser, googleLogin, githubLogin, facebookLogin, setUser } = useContext(AuthContext)
+    const [error, setError] = useState('')
 
     const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value
         const password = e.target.password.value;
         console.log(email, password)
+
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                alert('Sign in Successfully')
+            })
+            .catch(error => {
+                console.log(error)
+                setError('Please Write Your Correct Gmail or Password!!!')
+            })
+
+
+        // const handleGoogleLogin = () => {
+
+        //     googleLogin()
+        //         .then(result => {
+        //             setUser(result.user)
+        //         })
+        // }
+
+
+    }
+
+
+
+    const handleGoogleLogin =() => {
+        googleLogin()
+        .then(result =>{
+            setUser(result.user)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    const handleGithubLogin = () => {
+        githubLogin()
+            .then(result => {
+                setUser(result.user)
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
 
     return (
@@ -37,6 +85,8 @@ const Login = () => {
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
                 </div>
+                <p className="text-red-600 text-center">{error}</p>
+
                 <div className="form-control mt-6">
                     <button className="btn bg-orange-500 text-white">Login</button>
                 </div>
@@ -45,7 +95,9 @@ const Login = () => {
 
             <p className="text-center">or</p>
 
-            <p className=" rounded-lg text-center border p-4 my-4" >Continue with google</p>
+            <p className=" rounded-lg text-center border p-4 my-4" >
+                <button onClick={handleGoogleLogin}>githubLogin</button>
+            </p>
         </div>
 
 
