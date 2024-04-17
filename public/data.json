@@ -1,0 +1,81 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Luxury Beachfront Villa",
+      "segment_name": "Hotels",
+      "description": "Experience the ultimate luxury living with breathtaking views of the ocean.",
+      "long-description": "Graced with striking colonnades and draped in the splendor of Mughal and Ottoman artistic influence, The Chedi Katara Hotel & Resort is a modern architectural marvel that mirrors Doha's spectacular dynamism while honoring its storied history. Overlooking the Arabian Sea, each of the hotel's beguiling rooms, suites, and private villas bestows captivating vistas over a private beach and lavish courtyard garden. From attentive, personalized services to an abundance of exceptional indulgences, including international gastronomy and wellness spa, the resort is a haven of unprecedented excellence in the Katara Cultural Village.",
+      "price": "$2,500,000",
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "Malibu, California",
+      "facilities": ["Infinity Pool", "Private Beach Access", "Gourmet Kitchen"],
+      "image": "https://i.ibb.co/vJNct82/hotels.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "City Center Boutique Motel",
+      "segment_name": "Motels",
+      "description": "Escape to the serenity of the mountains with this cozy cabin retreat.",
+      "long-description": "Graced with striking colonnades and draped in the splendor of Mughal and Ottoman artistic influence, The Chedi Katara Hotel & Resort is a modern architectural marvel that mirrors Doha's spectacular dynamism while honoring its storied history. Overlooking the Arabian Sea, each of the hotel's beguiling rooms, suites, and private villas bestows captivating vistas over a private beach and lavish courtyard garden. From attentive, personalized services to an abundance of exceptional indulgences, including international gastronomy and wellness spa, the resort is a haven of unprecedented excellence in the Katara Cultural Village.",
+      "price": "$500,000",
+      "status": "sale",
+      "area": "1500 sq ft",
+      "location": "Aspen, Colorado",
+      "facilities": ["Stone Fireplace", "Hot Tub", "Scenic Deck"],
+      "image": "https://i.ibb.co/cvs1WVX/motels.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Urban Loft Apartment Resort",
+      "segment_name": "Resorts",
+      "description": "Live in the heart of the city with this stylish loft apartment.",
+      "long-description": "Graced with striking colonnades and draped in the splendor of Mughal and Ottoman artistic influence, The Chedi Katara Hotel & Resort is a modern architectural marvel that mirrors Doha's spectacular dynamism while honoring its storied history. Overlooking the Arabian Sea, each of the hotel's beguiling rooms, suites, and private villas bestows captivating vistas over a private beach and lavish courtyard garden. From attentive, personalized services to an abundance of exceptional indulgences, including international gastronomy and wellness spa, the resort is a haven of unprecedented excellence in the Katara Cultural Village.",
+      "price": "$3,000/month",
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "New York City, New York",
+      "facilities": ["Open Floor Plan", "Rooftop Terrace", "Modern Appliances"],
+      "image": "https://i.ibb.co/JyqgScY/resorts.webp"
+    },
+    {
+      "id": 4,
+      "estate_title": "Historic Manor House",
+      "segment_name": "Vacation Rentals",
+      "description": "Own a piece of history with this meticulously restored manor house.",
+      "long-description": "Graced with striking colonnades and draped in the splendor of Mughal and Ottoman artistic influence, The Chedi Katara Hotel & Resort is a modern architectural marvel that mirrors Doha's spectacular dynamism while honoring its storied history. Overlooking the Arabian Sea, each of the hotel's beguiling rooms, suites, and private villas bestows captivating vistas over a private beach and lavish courtyard garden. From attentive, personalized services to an abundance of exceptional indulgences, including international gastronomy and wellness spa, the resort is a haven of unprecedented excellence in the Katara Cultural Village.",
+      "price": "$10,000,000",
+      "status": "sale",
+      "area": "8000 sq ft",
+      "location": "Cotswolds, England",
+      "facilities": ["Formal Gardens", "Ballroom", "Library"],
+      "image": "https://i.ibb.co/R2k6q2x/rentals.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Ski Chalet Lodges",
+      "segment_name": "Lodges",
+      "description": "Experience luxury ski-in/ski-out living at this exclusive chalet resort.",
+      "long-description": "Graced with striking colonnades and draped in the splendor of Mughal and Ottoman artistic influence, The Chedi Katara Hotel & Resort is a modern architectural marvel that mirrors Doha's spectacular dynamism while honoring its storied history. Overlooking the Arabian Sea, each of the hotel's beguiling rooms, suites, and private villas bestows captivating vistas over a private beach and lavish courtyard garden. From attentive, personalized services to an abundance of exceptional indulgences, including international gastronomy and wellness spa, the resort is a haven of unprecedented excellence in the Katara Cultural Village.",
+      "price": "$7,500,000",
+      "status": "sale",
+      "area": "6000 sq ft",
+      "location": "Whistler, Canada",
+      "facilities": ["Formal Gardens", "Rooftop Terrace", "Ocean Views"],
+      "image": "https://i.ibb.co/nP76YSd/hotels.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Tropical Paradise Villa",
+      "segment_name": "Guesthouses",
+      "description": "Indulge in island living at this luxurious tropical villa.",
+      "long-description": "Graced with striking colonnades and draped in the splendor of Mughal and Ottoman artistic influence, The Chedi Katara Hotel & Resort is a modern architectural marvel that mirrors Doha's spectacular dynamism while honoring its storied history. Overlooking the Arabian Sea, each of the hotel's beguiling rooms, suites, and private villas bestows captivating vistas over a private beach and lavish courtyard garden. From attentive, personalized services to an abundance of exceptional indulgences, including international gastronomy and wellness spa, the resort is a haven of unprecedented excellence in the Katara Cultural Village.",
+      "price": "$1,200/night",
+      "status": "rent",
+      "area": "3000 sq ft",
+      "location": "Bali, Indonesia",
+      "facilities": ["Private Pool", "Ocean Views", "Outdoor Dining Pavilion"],
+      "image": "https://i.ibb.co/s6fyXYj/guesthouses.jpg"
+    }
+  ]
+  

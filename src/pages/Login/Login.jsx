@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaFacebook, FaGithub} from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -9,6 +9,9 @@ const Login = () => {
 
     const { signInUser, googleLogin, githubLogin, facebookLogin, setUser } = useContext(AuthContext)
     const [error, setError] = useState('')
+    const location = useLocation()
+    const navigate = useNavigate()
+    console.log('location on login page', location)
     console.log(setError);
 
     const handleLogin = e => {
@@ -20,6 +23,7 @@ const Login = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
+                navigate(location?.state ? location.state: '/' )
                 alert('Sign in Successfully')
             })
             .catch(error => {
@@ -35,6 +39,7 @@ const Login = () => {
         googleLogin()
         .then(result =>{
             setUser(result.user)
+            navigate(location?.state ? location.state: '/' )
             alert('Sign in Successfully')
         })
         .catch(error => {
@@ -46,6 +51,7 @@ const Login = () => {
         githubLogin()
             .then(result => {
                 setUser(result.user)
+                navigate(location?.state ? location.state: '/' )
                 alert('Sign in Successfully')
             })
             .catch(error => {
@@ -57,6 +63,7 @@ const Login = () => {
         facebookLogin()
             .then(result => {
                 setUser(result.user)
+                navigate(location?.state ? location.state : '/' )
                 alert('Sign in Successfully')
             })
             .catch(error => {
