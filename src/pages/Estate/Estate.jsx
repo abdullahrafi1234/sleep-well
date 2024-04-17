@@ -1,4 +1,4 @@
-// import { useEffect, useState } from "react";
+
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
@@ -15,6 +15,7 @@ const Estate = ({ estate }) => {
 
     return (
         <div>
+
             <div className="hero shadow-lg p-4 rounded-lg my-16 justify-start">
                 <div className="hero-content p-4 gap-12 flex-col lg:flex-row">
                     <img src={image} className="max-w-sm rounded-lg shadow-2xl" />

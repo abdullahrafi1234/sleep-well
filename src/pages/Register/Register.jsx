@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -50,7 +51,9 @@ const Register = () => {
 
     return (
         <div className="max-w-lg mx-auto my-36">
-
+            <Helmet>
+            <title>SleepWell | Register</title>
+            </Helmet>
 
             <p className="text-center font-medium text-2xl pb-12">Create Your Account</p>
             <form onSubmit={handleRegister} className="card-body border bg-gray-100 rounded-lg">

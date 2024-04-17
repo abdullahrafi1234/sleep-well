@@ -1,7 +1,11 @@
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
     return (
         <div className="max-w-lg mx-auto my-36">
+            <Helmet>
+                <title>SleepWell | Contact</title>
+            </Helmet>
 
 
             <p className="text-center font-medium text-2xl pb-12">Contact Us</p>

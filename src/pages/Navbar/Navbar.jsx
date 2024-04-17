@@ -32,7 +32,10 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-[10px] text-orange-400"> <span className="text-2xl text-white">SleepWell</span> <br /> Real Estate</a>
+                <div className="flex items-center gap-0 ml-4">
+                    <p><img className="lg:w-16" src="logos.png" alt="" /></p>
+                    <a className="btn btn-ghost text-3xl text-white">SleepWell</a>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

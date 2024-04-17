@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaFacebook, FaGithub} from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -74,6 +75,9 @@ const Login = () => {
     return (
 
         <div className="max-w-lg mx-auto my-36">
+            <Helmet>
+            <title>SleepWell | Login</title>
+            </Helmet>
 
             <p className="text-center font-medium text-2xl pb-12">Login to SleepWell</p>
             <form onSubmit={handleLogin} className="card-body border bg-gray-100 rounded-lg">
