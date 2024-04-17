@@ -9,4 +9,4 @@
 
 
 --npm packages
-1. React-icons
+1. Swiper Slider
