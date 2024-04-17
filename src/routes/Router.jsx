@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ViewProperty from "../pages/ViewProperty/ViewProperty";
 import PrivateRoute from "./PrivateRoute";
+import Contact from "../pages/Contact/Contact";
 
 
 const Router = createBrowserRouter([
@@ -27,6 +28,7 @@ const Router = createBrowserRouter([
         element: <PrivateRoute>
           <ViewProperty></ViewProperty>
         </PrivateRoute>,
+        loader: () => fetch('../data.json')
       },
       {
         path: '/login',
@@ -35,6 +37,13 @@ const Router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+
+      {
+        path: '/contact-us',
+        element: <PrivateRoute>
+          <Contact></Contact>
+        </PrivateRoute>
       }
     ]
   },

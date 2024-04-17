@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
     const [error, setError] = useState('')
+    const [showPassword, setShowPassword] =useState(false)
 
     const handleRegister = e => {
         e.preventDefault();
@@ -15,18 +17,18 @@ const Register = () => {
         console.log(email, password)
 
         setError('')
-        
+
 
 
         if (password.length < 6) {
             setError('Password must have 6 Character!!!')
             return
         }
-        if(!/[A-Z]/.test(password)){
+        if (!/[A-Z]/.test(password)) {
             setError('Password must have an Uppercase ')
             return
         }
-        if(!/[a-z]/.test(password)){
+        if (!/[a-z]/.test(password)) {
             setError('Password must have an Lowercase ')
             return
         }
@@ -48,7 +50,7 @@ const Register = () => {
 
     return (
         <div className="max-w-lg mx-auto my-36">
-            
+
 
             <p className="text-center font-medium text-2xl pb-12">Create Your Account</p>
             <form onSubmit={handleRegister} className="card-body border bg-gray-100 rounded-lg">
@@ -77,17 +79,29 @@ const Register = () => {
                     <input type="email"
                         name="email"
                         placeholder="Email Address"
-                        className="input input-bordered" required />
+                        className="input flex input-bordered" required />
+
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Your Password</span>
                     </label>
-                    <input type="password"
+                    <div className="relative w-full">
+                    <input type={showPassword ? 'text' : 'password'}
                         name="password"
                         placeholder="Password"
-                        className="input input-bordered" required />
-                    
+                        className="input w-full input-bordered"
+                         required />
+
+                    <span onClick={() => setShowPassword(!showPassword)} className="absolute left-96 top-3 text-center items-center">
+                    {
+                                showPassword ? <FaEyeSlash></FaEyeSlash> :
+                                    <FaEye></FaEye>
+                            }
+                    </span>
+
+
+                    </div>
                 </div>
                 <p className="text-red-600 text-center">{error}</p>
 
@@ -96,7 +110,7 @@ const Register = () => {
                 </div>
             </form>
             <p className="bg-blue-100 rounded-lg text-center border p-4 my-4">Already Have an Account? Please <Link className="text-orange-500 font-semibold" to={'/login'}>Login</Link></p>
-           
+
 
         </div>
 
