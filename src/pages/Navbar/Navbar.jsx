@@ -3,14 +3,15 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 
+
 const Navbar = () => {
 
-    const { logOut , user} = useContext(AuthContext)
+    const { logOut, user } = useContext(AuthContext)
 
     const handleSignOut = () => {
         logOut()
-        .then()
-        .catch()
+            .then()
+            .catch()
     }
 
     const navLinks = <>
@@ -21,7 +22,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-200 py-6">
+        <div className="navbar bg-green-600 text-white py-6">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,20 +32,25 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-sm"> <span className="text-3xl">SleepWell</span> <br />Real Estate</a>
+                <a className="btn btn-ghost text-[10px] text-orange-400"> <span className="text-2xl text-white">SleepWell</span> <br /> Real Estate</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navLinks}
                 </ul>
             </div>
-            <div>
+            <div className="navbar-end">
                 {
-                     user ? 
-                     <button onClick={handleSignOut} className="btn rounded-xl bg-orange-500 text-white">Sign Out</button> :
-                     <div className="navbar-end">
-                     <Link className="btn rounded-xl bg-orange-500 text-white" to={'/login'}>Login</Link>
-                 </div>
+                    user ?
+                        <div className="flex gap-3 items-center">
+
+                            <button data-tip={user.displayName} className=" text-white border-none tooltip tooltip-bottom w-12"><img className="rounded-full" src={user.photoURL} /></button>
+
+                            <button onClick={handleSignOut} data-tip={user.displayName} className="btn rounded-xl bg-orange-500 text-white border-none">Sign Out</button>
+                        </div> :
+                        <div className="">
+                            <Link className="btn rounded-xl bg-orange-500 text-white border-none" to={'/login'}>Login</Link>
+                        </div>
 
                 }
             </div>

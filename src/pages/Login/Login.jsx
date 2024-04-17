@@ -1,12 +1,15 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaFacebook, FaGithub} from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 
 const Login = () => {
 
     const { signInUser, googleLogin, githubLogin, facebookLogin, setUser } = useContext(AuthContext)
     const [error, setError] = useState('')
+    console.log(setError);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -21,18 +24,8 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error)
-                setError('Please Write Your Correct Gmail or Password!!!')
+                alert('Please Write Your Correct Gmail or Password!!!')
             })
-
-
-        // const handleGoogleLogin = () => {
-
-        //     googleLogin()
-        //         .then(result => {
-        //             setUser(result.user)
-        //         })
-        // }
-
 
     }
 
@@ -42,6 +35,7 @@ const Login = () => {
         googleLogin()
         .then(result =>{
             setUser(result.user)
+            alert('Sign in Successfully')
         })
         .catch(error => {
             console.log(error)
@@ -52,6 +46,18 @@ const Login = () => {
         githubLogin()
             .then(result => {
                 setUser(result.user)
+                alert('Sign in Successfully')
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
+
+    const handleFacebookLogin = () => {
+        facebookLogin()
+            .then(result => {
+                setUser(result.user)
+                alert('Sign in Successfully')
             })
             .catch(error => {
                 console.log(error.message)
@@ -91,13 +97,20 @@ const Login = () => {
                     <button className="btn bg-orange-500 text-white">Login</button>
                 </div>
             </form>
-            <p className="bg-blue-100 rounded-lg text-center border p-4 my-4">New in SleepWell?  <Link className="text-orange-500 font-semibold" to={'/login'}>Create Your Account</Link></p>
-
             <p className="text-center">or</p>
+            
+            <p className=" rounded-lg text-center border p-4 my-4 space-x-6" >
+                <button onClick={handleGoogleLogin}><FcGoogle className="text-3xl"></FcGoogle></button>
 
-            <p className=" rounded-lg text-center border p-4 my-4" >
-                <button onClick={handleGoogleLogin}>githubLogin</button>
+                <button onClick={handleGithubLogin}><FaGithub className="text-3xl "></FaGithub></button>
+
+                <button onClick={handleFacebookLogin}><FaFacebook className="text-3xl text-blue-700 "></FaFacebook></button>
             </p>
+
+            <p className="bg-blue-100 rounded-lg text-center border p-4 my-4">New in SleepWell?  <Link className="text-green-500 font-semibold" to={'/register'}>Create Your Account</Link></p>
+
+
+
         </div>
 
 
