@@ -14,6 +14,11 @@ const Home = () => {
                 <title>SleepWell | Home</title>
             </Helmet>
             <Slider></Slider>
+
+            <div>
+                <p className="text-4xl  text-center font-bold mt-32">Featured Properties</p>
+                <p className="border-b border-green-300 p-2 text-center w-96 mx-auto"></p>
+            </div>
             <div>
                 {
                     estate.map(estate => <Estate key={estate.id} estate ={estate}></Estate>)

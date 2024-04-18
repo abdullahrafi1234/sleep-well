@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 
 const Slider = () => {
     return (
-        <div className="lg:mt-16 md:mt-8 mt-32">
+        <div className="lg:mt-16 mt-32">
             <Swiper
 
                 navigation={true}
