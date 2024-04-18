@@ -1,6 +1,11 @@
 
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
+import 'animate.css';
 
 
 const Estate = ({ estate }) => {
@@ -14,11 +19,11 @@ const Estate = ({ estate }) => {
     // },[])
 
     return (
-        <div>
+        <div >
 
-            <div className="hero shadow-lg p-4 rounded-lg my-16 justify-start">
+            <div data-aos="zoom-in" data-aos-duration="2000" className="hero shadow-lg p-4 rounded-lg my-16 justify-start">
                 <div className="hero-content p-4 gap-12 flex-col lg:flex-row justify-start">
-                    <img src={image} className="lg:max-w-sm md:max-w-sm rounded-lg shadow-2xl justify-start" />
+                    <img  src={image} className="lg:max-w-sm md:max-w-sm rounded-lg shadow-2xl justify-start" />
                     <div className="space-y-2 md:pl-8">
                         <h1 className="text-3xl font-medium ">{estate_title}</h1>
                         <p className="flex font-medium gap-2 items-center px-2">{location} <IoLocationOutline className="text-xl"></IoLocationOutline></p>

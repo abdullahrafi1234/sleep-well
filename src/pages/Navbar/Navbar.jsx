@@ -16,7 +16,9 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/update-profile'}>Update Profile</NavLink></li>
+        {
+            user? <li><NavLink to={'/update-profile'}>Update Profile</NavLink></li>:''
+        }
         <li><NavLink to={'/contact-us'}>Contact Us</NavLink></li>
         <li><NavLink to={'/register'}>Register</NavLink></li>
     </>
@@ -49,9 +51,10 @@ const Navbar = () => {
                     user ?
                         <div className="flex gap-3 items-center">
 
-                            <button data-tip={user.displayName} className=" text-white border-none tooltip tooltip-bottom w-12"><img className="rounded-full" src={user.photoURL} /></button>
+                            <button data-tip={user.displayName} className=" text-white border-none tooltip tooltip-bottom w-12">
+                                <img className="rounded-full" src={user?.photoURL || 'user.png'} /></button>
 
-                            <button onClick={handleSignOut} data-tip={user.displayName} className="btn rounded-xl bg-orange-500 text-white border-none">Sign Out</button>
+                            <button onClick={handleSignOut} data-tip={user?.displayName || 'Name Not Found'} className="btn rounded-xl bg-orange-500 text-white border-none">Sign Out</button>
                         </div> :
                         <div className="">
                             <Link className="btn rounded-xl bg-orange-500 text-white border-none" to={'/login'}>Login</Link>

@@ -9,6 +9,10 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ViewProperty from "../pages/ViewProperty/ViewProperty";
 import PrivateRoute from "./PrivateRoute";
 import Contact from "../pages/Contact/Contact";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 const Router = createBrowserRouter([
@@ -43,6 +47,12 @@ const Router = createBrowserRouter([
         path: '/contact-us',
         element: <PrivateRoute>
           <Contact></Contact>
+        </PrivateRoute>
+      },
+      {
+        path: '/update-profile',
+        element: <PrivateRoute>
+          <UpdateProfile></UpdateProfile>
         </PrivateRoute>
       }
     ]

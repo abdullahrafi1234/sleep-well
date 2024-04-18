@@ -3,7 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Slider from "../Slider/Slider";
 import Estate from "../Estate/Estate";
 import { Helmet } from "react-helmet-async";
-
+import 'animate.css';
 
 const Home = () => {
     const estate = useLoaderData()
@@ -16,7 +16,7 @@ const Home = () => {
             <Slider></Slider>
 
             <div>
-                <p className="text-4xl  text-center font-bold mt-32">Featured Properties</p>
+                <p className="animate__animated animate__flipInX  text-4xl  text-center font-bold mt-32">Featured Properties</p>
                 <p className="border-b border-green-300 p-2 text-center w-96 mx-auto"></p>
             </div>
             <div>

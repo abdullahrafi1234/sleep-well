@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
@@ -10,12 +10,14 @@ const Register = () => {
     const { createUser } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [showPassword, setShowPassword] =useState(false)
+    const navigate = useNavigate()
 
     const handleRegister = e => {
         e.preventDefault();
         const email = e.target.email.value
         const password = e.target.password.value;
         console.log(email, password)
+
 
         setError('')
 
@@ -39,6 +41,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
+                navigate(location?.state ? location.state: '/' )
                 alert('Logged in Successfully!')
             })
             .catch(error => {
@@ -96,7 +99,7 @@ const Register = () => {
                         className="input w-full input-bordered"
                          required />
 
-                    <span onClick={() => setShowPassword(!showPassword)} className="absolute left-96 top-3 text-center items-center">
+                    <span onClick={() => setShowPassword(!showPassword)} className="absolute lg:left-96 md:left-96 left-80  lg:top-4 top-4 text-center items-center">
                     {
                                 showPassword ? <FaEyeSlash></FaEyeSlash> :
                                     <FaEye></FaEye>

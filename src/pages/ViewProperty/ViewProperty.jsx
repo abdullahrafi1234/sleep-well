@@ -2,7 +2,10 @@
 import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 import { IoLocationOutline } from "react-icons/io5";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const ViewProperty = () => {
     const propertys = useLoaderData()
@@ -19,14 +22,14 @@ const ViewProperty = () => {
             <Helmet>
                 <title>SleepWell | ViewProperty</title>
             </Helmet>
-            <div className="mt-12 mb-16 lg:p-0 p-8">
+            <div  className="mt-12 mb-16 lg:p-0 p-8">
                 <div className=" flex-col lg:flex-row">
 
                     <h1 className="text-4xl py-2 font-bold">{estate_title}</h1>
                     <p className="border-b border-green-300  w-[500px] "></p>
 
                     <div className="bg-[#1313130D mt-8  rounded-lg text-center">
-                        <img src={image} className=" text-center w-full lg:h-[700px] md:h-[550-x] h-[350px] rounded-lg shadow-2xl" />
+                        <img data-aos="zoom-in" data-aos-duration="1000" src={image} className=" text-center w-full lg:h-[700px] md:h-[550-x] h-[350px] rounded-lg shadow-2xl" />
                     </div>
 
                     <div className="w-3/4 mt-16   text-start">
